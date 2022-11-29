@@ -65,11 +65,16 @@ textarea {
 .incoming {
     background: #8F8BE8;
     color: #fff;  
+    border-radius: 15px;
+    border-top-left-radius: 0;
 }
 .outgoing {
     background: #e9eafd;
     color: #787986;
     margin-left: auto;
+
+    border-radius: 15px;
+    border-top-right-radius: 0;
 }
 .message h4 {
     position: absolute;
