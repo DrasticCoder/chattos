@@ -1,6 +1,9 @@
 const socket = io()
 const id = window.location.pathname.slice(1);
 
+const msgSetAudio = new Audio(`/msgSendAudio.mp3`);
+const msgGetAudio = new Audio('/msgGetAudio.mp3');
+
 let name = localStorage.getItem('name');
 let textarea = document.querySelector('#textarea')
 let messageArea = document.querySelector('.message__area')
@@ -13,6 +16,7 @@ while (!name) {
 textarea.addEventListener('keyup', (e) => {
     if(e.key === 'Enter') {
         sendMessage(e.target.value)
+        msgSetAudio.play();
     }
 })
 
@@ -48,6 +52,7 @@ function appendMessage(msg, type) {
 // Recieve messages 
 socket.on(id, (msg) => {
     appendMessage(msg, 'incoming')
+    msgGetAudio.play();
     scrollToBottom()
 })
 
