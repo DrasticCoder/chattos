@@ -14,10 +14,14 @@
             <img height="40" src="/chattos.png" alt="chat img">
             <h1>Chattos</h1>
         </div>
+
         <div class="message__area"></div>
-        <div>
-            <textarea id="textarea" cols="30" rows="1" placeholder="Write a message..."></textarea>
-            <!-- <button id="share__btn">Share</button> -->
+
+        <div id="input__area">
+            <form onsubmit="sendMessageBtn();return false">
+                <textarea id="textarea" cols="30" rows="1" placeholder="Write a message..." required></textarea>
+                <button id="send__btn" type="submit"><img src="/send-btn.png" alt=""></button>
+            </form>
         </div>
     </section>
     <script src="/socket.io/socket.io.js"></script>

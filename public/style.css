@@ -46,13 +46,31 @@ textarea {
     font-size: 16px;
     outline: none;
     background: #FBFBFB;
+    display: block;
+    width: 92% !important;
+    resize: vertical;
 }
 
-/* #share__btn{
-    width: 10%;
-    position: absolute;
+#input__area{
+    position: relative;
+}
 
-} */
+#send__btn{
+    padding: 10px 20px;
+    font-size: 20px;
+    position: absolute;
+    /* right: 10px; */
+    right: 0px;
+    /* bottom: 10px;  */
+    bottom: 0px; 
+    background-color: #8F8BE8;
+    color: whitesmoke;
+    border: 1px solid #787986;
+}
+
+#send__btn img{
+    height: 30px;
+}
 
 .message {
     padding: 20px; 
@@ -83,3 +101,9 @@ textarea {
     color: #333;
     font-size: 14px;
 }
+
+@media only screen and (max-width: 600px) {
+    textarea{
+        width: 85% !important;
+    }
+  }

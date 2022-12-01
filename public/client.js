@@ -20,6 +20,12 @@ textarea.addEventListener('keyup', (e) => {
     }
 })
 
+function sendMessageBtn(){
+    const msgContent = document.getElementById('textarea').value;
+    sendMessage(msgContent);
+    msgSetAudio.play();
+}
+
 function sendMessage(message) {
     let msg = {
         user: name,
