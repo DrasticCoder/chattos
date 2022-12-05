@@ -15,14 +15,31 @@
         <div class="brand">
             <img height="40" src="/chattos.png" alt="chat img">
             <h1>Chattos</h1>
-        </div>
 
+            <div id="share__btn" class="tooltip" onclick="openOptionsMenu()">
+                <span class="tooltiptext">Options</span>
+                <img src="/options.png" alt="options"></div>
+            
+            <div id="options__menu" class="hidden">
+                <div class="options" onclick="openJoinModal()"><p>Join</p></div>
+                <div class="options"><p>Share</p></div>
+                <div class="options"><p>Download</p></div>
+            </div>
+        </div>
+        
+        <div class="popup__modal hidden" id="join__section">
+            <div class="close__modal" onclick="openJoinModal()">&times;</div>
+            <h3>Join Chat</h3>
+                <input type="number" id="join_chat_id" placeholder="Unique room Id">
+                <button onclick="joinChat()">Join</button>
+        </div>
+        
         <div class="message__area"></div>
 
         <div id="input__area">
             <form onsubmit="sendMessageBtn();return false">
-                <textarea id="textarea" cols="30" rows="1" placeholder="Write a message..." required></textarea>
-                <button id="send__btn" type="submit"><img src="/send-btn.png" alt=""></button>
+                <textarea id="textarea" cols="30" rows="1" title="Start writting here..." placeholder="Write a message..." required></textarea>
+                <button id="send__btn" type="submit" class="tooltip"><span class="tooltiptext">Send</span><img src="/send-btn.png" alt="send"></button>
             </form>
         </div>
     </section>

@@ -12,6 +12,7 @@ body {
     min-height: 100vh;
     background: #F8F8F8;
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 section.chat__section {
     width: 800px;
@@ -24,13 +25,27 @@ section.chat__section {
     background: #f1f1f1;
     display: flex;
     align-items: center;
+
+    position: relative;
 }
+
+#share__btn{
+    position: absolute;
+    right: 2%;
+    height: auto;
+}
+
+#share__btn img{
+    height: 30px;
+}
+
 .brand h1 {
     text-transform: uppercase;
     font-size: 20px;
     color: #444;
     margin-left: 10px;
 }
+
 .message__area{
     height: 500px;
     padding: 16px;
@@ -39,6 +54,7 @@ section.chat__section {
     overflow-y: auto;
     padding-top: 40px;
 }
+
 textarea {
     width: 90%;
     border: none;
@@ -59,9 +75,7 @@ textarea {
     padding: 10px 20px;
     font-size: 20px;
     position: absolute;
-    /* right: 10px; */
     right: 0px;
-    /* bottom: 10px;  */
     bottom: 0px; 
     background-color: #8F8BE8;
     color: whitesmoke;
@@ -102,8 +116,152 @@ textarea {
     font-size: 14px;
 }
 
-@media only screen and (max-width: 600px) {
-    textarea{
-        width: 85% !important;
-    }
+#options__menu{
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 5rem;
+    width: auto;
+    height:auto;
+
+    color: #333;
+    background-color: #e9eafd
+}
+
+.options{
+    height: 2.5rem;
+    width: 10rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.options:hover{
+    background-color: #8F8BE8;
+    color: #fff;
+    cursor: pointer;
+}
+
+.options p{
+    position: absolute;
+    top: 25%;
+}
+
+.popup__modal{
+    position: absolute;
+    top: 30%;
+    left: 35%; 
+    z-index: 3; 
+    height: 20rem;
+    width: 40rem;
+}
+
+#join__section{
+    background-color: #f8f9fd;
+    box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.popup__modal h3{
+    position: absolute;
+    color: #8F8BE8;
+    left: 45%;
+    top: 15%;
+}
+
+.popup__modal input{
+    width: 80%;
+    height: 2.5rem;
+    padding: 10px;
+    position: absolute;
+    top: 43%;
+    left: 10%;
+}
+
+.popup__modal button{
+    width: 80%;
+    height: 2rem;
+    position: absolute;
+    top: 55%;
+    left: 10%;
+}
+
+.close__modal{
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    padding: 3px 5px;
+    scale: 2;
+}
+
+.close__modal:hover, .close__modal:focus{
+    background-color: red;
+    color: whitesmoke;
+    cursor: pointer;
+} 
+
+.hidden{
+    display: none;
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
   }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #787986;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #787986 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  
+    @media only screen and (max-width: 600px) {
+        textarea{
+            width: 85% !important;
+        }
+    
+        #share__btn img{
+            height: 25px;
+        }
+    
+        .options{
+            height: 2.5rem;
+            width: 7rem;
+        }
+
+        .popup__modal{
+            height: 20rem;
+            width: 20.5rem;
+            top: auto;
+            left: auto;
+        }
+
+        .popup__modal h3{
+            left: 35%;
+        }
+      }
