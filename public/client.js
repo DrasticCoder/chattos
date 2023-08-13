@@ -16,12 +16,12 @@ while (!name) {
     localStorage.setItem('name',name)
 }
 
-// textarea.addEventListener('keyup', (e) => {
-//     if(e.key === 'Enter') {
-//         sendMessage(e.target.value)
-//         msgSetAudio.play();
-//     }
-// })
+textarea.addEventListener('keyup', (e) => {
+    if(e.key === 'Enter') {
+        sendMessage(e.target.value)
+        msgSetAudio.play();
+    }
+})
 
 function sendMessageBtn(){
     const msgContent = textarea.value;
