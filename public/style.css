@@ -136,12 +136,14 @@ textarea {
     position: relative;
 }
 
-.options:hover{
-    background-color: #8F8BE8;
-    color: #fff;
-    cursor: pointer;
+@media (min-width:992px) {   
+    .options:hover{
+        background-color: #8F8BE8;
+        color: #fff;
+        cursor: pointer;
+    }
 }
-
+    
 .options p{
     position: absolute;
     top: 25%;

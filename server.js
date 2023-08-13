@@ -27,13 +27,9 @@ const io = require('socket.io')(http)
 io.on('connection', (socket) => {
     if(id){
         socket.on(id, (msg) => {
-            // console.log('messsage send',msg.id)
             socket.broadcast.emit(msg.id, msg)
         })
     }
-    // else{
-        // console.log('no msg')
-    // }
 })
 
 //generate random number
