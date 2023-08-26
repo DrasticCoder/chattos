@@ -94,6 +94,11 @@ textarea {
     position: relative;
     flex-direction: row;
 }
+
+.message.copy-code{
+    background-color : red;
+}
+
 .incoming {
     background: #8F8BE8;
     color: #fff;  
@@ -241,6 +246,24 @@ textarea {
     visibility: visible;
   }
 
+  .message.copy-code p {
+    display: relative;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+
+.message.copy-code p:after {
+    background : url('../chattos.png');
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+}
   
     @media only screen and (max-width: 600px) {
         textarea{

@@ -23,6 +23,13 @@ textarea.addEventListener('keyup', (e) => {
     }
 })
 
+// copy code to clipboard
+function copyToClipboard() {
+    document.querySelector('.copy-code')?.addEventListener('click', function() {
+        navigator.clipboard.writeText(this.querySelector('p').innerHTML);
+    });
+}
+
 function sendMessageBtn(){
     const msgContent = textarea.value;
     sendMessage(msgContent);
@@ -30,10 +37,12 @@ function sendMessageBtn(){
 }
 
 function sendMessage(message) {
+    message = message.trim();
+
     let msg = {
         user: name,
      	id : id ,
-        message: message.trim()
+        message: message
     }
     // Append 
     appendMessage(msg, 'outgoing')
@@ -42,13 +51,19 @@ function sendMessage(message) {
 
     // Send to server 
     socket.emit(id, msg)
-
+    
+    copyToClipboard();
 }
 
 function appendMessage(msg, type) {
     let mainDiv = document.createElement('div')
     let className = type
     mainDiv.classList.add(className, 'message')
+
+    if (msg.message.startsWith('/code ')) {
+        msg.message = msg.message.substring('/code '.length)
+        mainDiv.classList.add('copy-code');
+    }
 
     let markup = `
         <h4>${msg.user}</h4>
