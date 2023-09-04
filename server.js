@@ -16,6 +16,10 @@ app.get('/', (req, res) => {
     res.redirect(randomInt)
 })
 
+app.get('/test',(req,res) => {
+    res.status(200).send("testing...");
+})
+
 app.get('/:id',(req,res)=>{
     id = req.params.id;
     res.sendFile(__dirname + '/index.html')
